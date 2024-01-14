@@ -28,7 +28,7 @@ db.connect((err) => {
 app.post('/api/register', (req, res) => {
   const { username, password } = req.body;
 
-  // Hash the password before storing it in the database
+
   const hashedPassword = bcrypt.hashSync(password, 10);
 
   const sql = 'INSERT INTO users (username, password) VALUES (?, ?)';
